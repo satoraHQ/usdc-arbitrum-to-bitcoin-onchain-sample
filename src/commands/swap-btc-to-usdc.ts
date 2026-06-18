@@ -1,4 +1,8 @@
-import { Asset, type Chain } from "@lendasat/lendaswap-sdk-pure";
+import {
+  Asset,
+  type BitcoinToEvmSwapResponse,
+  type Chain,
+} from "@lendasat/lendaswap-sdk-pure";
 import { formatUsdc } from "../balance.js";
 import {
   asBitcoinToEvm,
@@ -100,7 +104,7 @@ export async function createBitcoinToUsdcSwap(
     targetAddress: evmAddress,
   });
 
-  const swap = result.response;
+  const swap = result.response as BitcoinToEvmSwapResponse;
   const swapId = swap.id;
 
   console.log(`Swap created: ${swapId}`);

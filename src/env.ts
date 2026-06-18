@@ -22,6 +22,9 @@ export async function loadOrCreateMnemonic(): Promise<string> {
   // Generate new mnemonic
   const signer = Signer.generate(12);
   const mnemonic = signer.mnemonic;
+  if (!mnemonic) {
+    throw new Error("Failed to generate mnemonic from new signer.");
+  }
 
   // Write to .env (append if file exists, create if not)
   const line = `MNEMONIC="${mnemonic}"\n`;

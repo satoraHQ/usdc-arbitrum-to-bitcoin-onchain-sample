@@ -5,9 +5,9 @@ export async function recoverSwaps() {
 
   console.log(`\nRecovering swaps from server...`);
   const recovered = await client.recoverSwaps();
-  console.log(`Found ${recovered.length} swap(s).`);
+  console.log(`Found ${recovered.swaps.length} swap(s).`);
 
-  for (const swap of recovered) {
+  for (const swap of recovered.swaps) {
     const response = swap.response;
     console.log(
       `  ${swap.swapId} - ${response.status} (${response.direction})`,

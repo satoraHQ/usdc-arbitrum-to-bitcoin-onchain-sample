@@ -22,7 +22,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@lendasat/lendaswap-sdk-pure": "^0.2.20",
+    "@lendasat/lendaswap-sdk-pure": "^0.2.42",
     "better-sqlite3": "^12.8.0",
     "dotenv": "^17.4.0",
     "ethers": "^6.16.0",
